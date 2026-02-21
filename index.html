@@ -1,0 +1,57 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+let noClickCount = 0;
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+
+noBtn.style.left = "55%";
+noBtn.style.top = "60%";
+
+noBtn.addEventListener("mouseover", function() {
+    if (noClickCount >= 1) {
+        const x = Math.random() * (window.innerWidth - 120);
+        const y = Math.random() * (window.innerHeight - 60);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+});
+
+noBtn.addEventListener("click", function() {
+    noClickCount++;
+
+    if (noClickCount === 1) {
+        alert("Yakin enggak? 🥺");
+        yesBtn.style.transform = "scale(1.2)";
+    } 
+    else if (noClickCount === 2) {
+        alert("Serius nih?? 😤");
+        yesBtn.style.transform = "scale(1.5)";
+        document.body.style.backgroundColor = "#ffcccc";
+    } 
+    else if (noClickCount >= 3) {
+        alert("YA UDAH AKU SEDIH BANGET 😭💔");
+        noBtn.style.display = "none";
+        yesBtn.style.transform = "scale(2)";
+        document.body.style.backgroundColor = "#ff1a4d";
+    }
+});
+
+yesBtn.addEventListener("click", function() {
+    document.body.innerHTML = `
+        <h1>YEAYYY ❤️❤️❤️</h1>
+        <h2>Kamu resmi jadi Valentine aku 😘</h2>
+        <iframe 
+            src="https://drive.google.com/file/d/1k5N1qXKZ5YckVdN3Euj8BIbkKDEm7wCA/preview"
+            width="720"
+            height="400"
+            allow="autoplay">
+        </iframe>
+    `;
+});
+
+});
+</script>
+
+
