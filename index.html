@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Anniversary and Valentine 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #999;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mau jadi Valentine aku? 💕</h1>
+
+<button id="yesBtn">Iya ❤️</button>
+<button id="noBtn">Enggak 😒</button>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -9,6 +56,7 @@ const yesBtn = document.getElementById("yesBtn");
 noBtn.style.left = "55%";
 noBtn.style.top = "60%";
 
+// Tombol kabur
 noBtn.addEventListener("mouseover", function() {
     if (noClickCount >= 1) {
         const x = Math.random() * (window.innerWidth - 120);
@@ -18,6 +66,7 @@ noBtn.addEventListener("mouseover", function() {
     }
 });
 
+// Klik Enggak
 noBtn.addEventListener("click", function() {
     noClickCount++;
 
@@ -38,20 +87,24 @@ noBtn.addEventListener("click", function() {
     }
 });
 
+// Klik Iya → tampilkan video Drive
 yesBtn.addEventListener("click", function() {
     document.body.innerHTML = `
         <h1>YEAYYY ❤️❤️❤️</h1>
         <h2>Kamu resmi jadi Valentine aku 😘</h2>
         <iframe 
             src="https://drive.google.com/file/d/1k5N1qXKZ5YckVdN3Euj8BIbkKDEm7wCA/preview"
-            width="720"
-            height="400"
-            allow="autoplay">
+            width="800"
+            height="450"
+            allow="autoplay"
+            style="border:none;">
         </iframe>
     `;
+    document.body.style.backgroundColor = "#ff4d6d";
 });
 
 });
 </script>
 
-
+</body>
+</html>
